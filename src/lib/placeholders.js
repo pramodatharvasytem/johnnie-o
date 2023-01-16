@@ -7,18 +7,18 @@ const PLACEHOLDERS = {
       byline: {
         value: 'The All New Hydrogen Snowboard Exclusively From Shopify',
       },
-      cta: {value: 'Shop Now →'},
+      cta: {value: 'Shop Now'},
       handle: 'freestyle',
       spread: {
         reference: {
           mediaContentType: 'IMAGE',
           alt: 'Tracks in the snow leading to a person on a mountain top with a red jacket contrasting to an epic blue horizon with a mountain range in the distance.',
           previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0551/4566/0472/files/Hydrogen_Hero_Feature_1.jpg?v=1654902468',
+            url: 'https://cdn.shopify.com/s/files/1/2275/0137/files/asale-23-Refresh-HmBanner-HM_Mobile_Blocks.jpg',
           },
           id: 'gid://shopify/MediaImage/29259478466616',
           image: {
-            url: 'https://cdn.shopify.com/s/files/1/0551/4566/0472/files/Hydrogen_Hero_Feature_1.jpg?v=1654902468',
+            url: 'https://cdn.shopify.com/s/files/1/2275/0137/files/asale-23-Refresh-HmBanner-HM_Mobile_Blocks.jpg',
             width: 2500,
             height: 3155,
           },

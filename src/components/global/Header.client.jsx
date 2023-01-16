@@ -4,6 +4,7 @@ import {useWindowScroll} from 'react-use';
 import {
   Heading,
   IconAccount,
+  Logo,
   IconBag,
   IconMenu,
   IconSearch,
@@ -13,7 +14,6 @@ import {
 import {CartDrawer} from './CartDrawer.client';
 import {MenuDrawer} from './MenuDrawer.client';
 import {useDrawer} from './Drawer.client';
-
 /**
  * A client component that specifies the content of the header on the website
  */
@@ -59,7 +59,7 @@ export function Header({title, menu}) {
   );
 }
 
-function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
+function MobileHeader({countryCode, isHome, openCart, openMenu}) {
   const {y} = useWindowScroll();
 
   const styles = {
@@ -105,7 +105,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
         to="/"
       >
         <Heading className="font-bold text-center" as={isHome ? 'h1' : 'h2'}>
-          {title}
+          <Logo />
         </Heading>
       </Link>
 
@@ -122,7 +122,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
   );
 }
 
-function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
+function DesktopHeader({countryCode, isHome, menu, openCart}) {
   const {y} = useWindowScroll();
 
   const styles = {
@@ -138,21 +138,20 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
   };
 
   return (
-    <header role="banner" className={styles.container}>
-      <div className="flex gap-12">
-        <Link className={`font-bold`} to="/">
-          {title}
-        </Link>
-        <nav className="flex gap-8">
+    <header role="banner" className={`header-scn bg-white p-4`}>
+      <div className="w-full container flex justify-between items-center ml-96">
+        <nav className="flex gap-12">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
-            <Link key={item.id} to={item.to} target={item.target}>
+            <Link className={item.title} key={item.id} to={item.to} target={item.target}>
               {item.title}
             </Link>
           ))}
         </nav>
-      </div>
-      <div className="flex items-center gap-1">
+        <Link className={`logo`} to="/">
+        <Logo />
+        </Link>
+        <div className='flex'>
         <form
           action={`/${countryCode ? countryCode + '/' : ''}search`}
           className="flex items-center gap-2"
@@ -179,7 +178,9 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
           <IconBag />
           <CartBadge dark={isHome} />
         </button>
+        </div>
       </div>
+
     </header>
   );
 }

@@ -26,7 +26,7 @@ export function Hero({
       >
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
           {spread?.reference && (
-            <div className="">
+            <div className="bannerhere">
               <SpreadMedia
                 scale={2}
                 sizes={
@@ -47,6 +47,7 @@ export function Hero({
           )}
           {spreadSecondary?.reference && (
             <div className="hidden md:block">
+              dfsfdsf
               <SpreadMedia
                 sizes="(min-width: 80em) 700, (min-width: 48em) 450, 500"
                 widths={[450, 700]}

@@ -4,19 +4,11 @@ export default defineConfig({
   shopify: {
     defaultCountryCode: 'US',
     defaultLanguageCode: 'EN',
-    storeDomain:
-      // @ts-ignore
-      Oxygen?.env?.PUBLIC_STORE_DOMAIN || 'hydrogen-preview.myshopify.com',
-    storefrontToken:
-      // @ts-ignore
-      Oxygen?.env?.PUBLIC_STOREFRONT_API_TOKEN ||
-      '3b580e70970c4528da70c98e097c2fa0',
-    privateStorefrontToken:
-      // @ts-ignore
-      Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
+    storeDomain: 'clutchbright.myshopify.com',
+    storefrontToken: 'a3aeb3f0537670a63931365b36dacd5d',
     storefrontApiVersion: '2022-07',
     // @ts-ignore
-    storefrontId: Oxygen?.env?.PUBLIC_STOREFRONT_ID,
+    //storefrontId: '130519302340',
   },
   session: CookieSessionStorage('__session', {
     path: '/',
